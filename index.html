@@ -697,7 +697,7 @@ async function submitOrder(method) {
     amount: amountCents,
     qty: qty,
     size: selectedSize,
-    payer: { name, taxId: cpf, email, phone },
+    payer: { name, taxId: cpf, address: document.getElementById('buyerAddress').value, city: document.getElementById('buyerCity').value, state: document.getElementById('buyerState').value, cep: document.getElementById('buyerCep').value, email, phone },
   };
   
   if (method === 'card') {
