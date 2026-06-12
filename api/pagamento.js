@@ -73,7 +73,7 @@ export default async function handler(req, res) {
   if (response.ok) {
             return res.status(200).json({
                         success: true, orderId,
-                        pixCode: data.pixCode || (data.pix && data.pix.code) || '',
+                        pixCode: data.pixCode || data.pix_code || data.qr_code || data.emv || (data.pix && data.pix.qr_code) || (data.pix && data.pix.emv) || '' || (data.pix && data.pix.code) || '',
                         pixQrUrl: data.pixQrUrl || (data.pix && data.pix.qrUrl) || '',
                         status: data.status || '',
             });
