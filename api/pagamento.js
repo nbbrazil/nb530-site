@@ -42,7 +42,7 @@ export default async function handler(req, res) {
                         quantity: parseInt(qty),
                         name: PRODUTO,
                         price: amountInt,
-                        type: 'PHYSICAL'
+                        type: 'DIGITAL'
             }],
   };
 
