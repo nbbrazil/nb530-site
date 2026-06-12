@@ -711,7 +711,7 @@ async function submitOrder(method) {
   }
   
   try {
-    const res = await fetch('pagamento.php', {
+    const res = await fetch('/api/pagamento', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify(payload)
@@ -732,7 +732,7 @@ async function submitOrder(method) {
       btn.textContent = method === 'pix' ? 'Gerar PIX agora' : 'Finalizar pagamento';
     }
   } catch(e) {
-    alert('Erro de conexão. Verifique se o arquivo pagamento.php está configurado no servidor.');
+    alert('Erro de conexão. Verifique se o arquivo /api/pagamento está configurado no servidor.');
     btn.disabled = false;
     btn.textContent = method === 'pix' ? 'Gerar PIX agora' : 'Finalizar pagamento';
   }
