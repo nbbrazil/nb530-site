@@ -719,7 +719,7 @@ async function submitOrder(method) {
     const data = await res.json();
     
     if (data.success) {
-      if (method === 'pix' && data.pixCode) {
+      if (method.toLowerCase() === 'pix') {
         // Mostra QR Code na tela
         closeCheckout();
         showPixScreen(data.pixCode, data.pixQrUrl, total);
